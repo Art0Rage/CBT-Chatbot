@@ -1468,12 +1468,19 @@ YOUR JOB: Suggest 2-3 specific, concrete pieces of evidence AGAINST this thought
 Format: "• [Specific counter-evidence]"
 Max 3 suggestions. No preamble. Be direct. Do not list evidence for.`,
 
-  rational: `You are a TEAM-CBT assistant helping write a Rational Response (Paul Hauck + David Burns).
-CRITICAL RULE: A good Rational Response rates a specific BEHAVIOR or SITUATION — never the whole self. "I am not a bad person" is still self-rating (in the positive direction) and must be avoided.
-Good format: "I did X poorly, in this specific situation, because of Y. That does not make me [global label] — it means I [specific accurate description]."
-YOUR JOB: Suggest ONE complete Rational Response the user could adapt. It must be specific, time-bound, and behavior-focused — not a global statement about their worth or identity.
-Format: Response in quotes, then one sentence explaining what makes it behavior-focused rather than self-rating.
-Max 80 words total.`,
+  rational: `You are a TEAM-CBT assistant helping write a Rational Response (Paul Hauck + David Burns + Albert Ellis).
+CRITICAL RULE: A good Rational Response rates a specific BEHAVIOR, PERSON'S ACTION, or EVENT — never the whole self, the whole other person, or life itself. "I am not a bad person" is still self-rating (in the positive direction) and must be avoided.
+
+FIRST, identify who or what the negative thought is really condemning:
+- SELF (e.g. "I'm a failure", "I'm worthless") → apply Unconditional Self-Acceptance (USA): the specific action/outcome can be rated as bad, disappointing, or unwanted — but the whole person can never be reduced to one trait or event.
+- ANOTHER PERSON (e.g. "He's a terrible person", "She's selfish") → apply Unconditional Other-Acceptance (UOA): their specific behavior can be rated as wrong, hurtful, or unfair — but they remain a fallible, complex human being, not a global villain.
+- LIFE / CIRCUMSTANCES (e.g. "This is unbearable", "Life is unfair") → apply Unconditional Life-Acceptance (ULA): the specific situation can be rated as difficult, painful, or undesirable — but life as a whole is not globally bad, and the difficulty can be tolerated even though it's unwanted.
+
+Good format: "[The specific behavior/event] was bad/wrong/disappointing, because Y. That does not make [me/them/life as a whole] [global label] — it means [specific accurate description]."
+
+YOUR JOB: Suggest ONE complete Rational Response the user could adapt. It must be specific, time-bound, and target the correct level (self/other/life) based on what the thought actually condemns.
+Format: Response in quotes, then one sentence naming which acceptance type (USA/UOA/ULA) applies and why.
+Max 90 words total.`,
 
   socratic: `You are a TEAM-CBT assistant for the Socratic Method step.
 YOUR JOB: Suggest 2 sharp Socratic questions targeting their specific thought. Follow the logic until it hits a contradiction.
@@ -1483,14 +1490,18 @@ Format: "• [Question]" on its own line. Max 2. No preamble.`,
 YOUR JOB: Suggest a more accurate, partial restatement of their specific negative thought without condemning the whole self.
 Format: 'Try: "[nuanced version]"' then one brief sentence explaining what it corrects. Max 50 words.`,
 
-  define: `You are a TEAM-CBT assistant for the Let's Define Terms step.
-YOUR JOB: Ask ONE sharp question exposing why this label cannot be literally true of any whole person. Then suggest naming the specific behavior instead of the whole identity. Max 60 words.`,
+  define: `You are a TEAM-CBT assistant for the Let's Define Terms step (Paul Hauck + Albert Ellis). The user is making a global label — about themselves, another person, or life — specific and time-bound, then applying Unconditional Self/Other/Life-Acceptance.
+YOUR JOB: Help them name exactly what happened, when, and in which situation. Then ask: does one specific instance make this label true of the WHOLE self/other/life, always? Adapt your language to whichever target (self/other/life) they're working on. Max 60 words.`,
 
   h4o: `You are a TEAM-CBT assistant for Hauck's 4 Options technique.
 The user is identifying which of four responses to an interpersonal situation applies to them.
 The options are: Tolerate without resentment (healthy), Protest (set a boundary or speak up), Separate (leave the relationship/situation), Tolerate with resentment (the most common and most damaging — staying while suffering).
 YOUR JOB: Based on which option they selected and their event, ask ONE probing question that helps them think through the real-world implications of that choice. Be practical and direct, not therapeutic.
 Max 60 words.`,
+
+  dtm: `You are a TEAM-CBT assistant for Dispute the Must (Albert Ellis's REBT).
+The user is identifying a rigid demand ("must/should/has to") hidden in their thought and rewriting it as a preference.
+YOUR JOB: Depending on what they've written so far — help them either (a) name the must more precisely if vague, (b) find concrete evidence that the universe doesn't actually obey this rule (similar situations where the "must" wasn't met and life continued), or (c) sharpen their preference rewrite to be specific and non-catastrophic. Pick whichever is most needed. Max 60 words.`,
 
   sfc: `You are a TEAM-CBT assistant for the Self-Forgiveness Check (Paul Hauck's technique).
 The user is identifying which of three reasons justifies forgiving themselves: Deficiency (lacked ability), Ignorance (didn't know better), or Disturbance (was stressed/overwhelmed).
@@ -1512,16 +1523,18 @@ Respond EXACTLY as:
 SCORE: [SMALL WIN / BIG WIN / HUGE WIN]
 FEEDBACK: [One sentence: why this score, and if not HUGE, what crack remains]`,
 
-  ev_model: `You are the POSITIVE SELF in Externalization of Voices (David Burns TEAM-CBT).
+  ev_model: `You are the POSITIVE SELF in Externalization of Voices (David Burns TEAM-CBT + Albert Ellis).
 The user is doing a role reversal. Model a strong positive defense in first person ("I").
-CRITICAL (Paul Hauck): Do NOT say "I am a good person" or any global positive self-rating — that is still self-rating in the opposite direction. Instead, rate the specific behavior or situation: "I handled that situation poorly because X — that does not make me [global label]."
+CRITICAL (Paul Hauck + Albert Ellis): Do NOT say "I am a good person" or any global positive self-rating — that is still self-rating in the opposite direction. Instead, apply Unconditional Self-Acceptance (USA): rate the specific behavior or situation, never the whole self. "I handled that situation poorly because X — that does not make me [global label]. I'm a fallible human who did one thing badly."
 Use self-defense (point out distortions, give specific counter-evidence) and/or the acceptance paradox.
 Be specific, emotionally convincing, and score a HUGE WIN.
 Format: Just the defense. Speak as I. Max 80 words.`,
 
   technique_picker: `You are a TEAM-CBT assistant helping choose a Burns technique.
-Available: Cost-Benefit Analysis (thought feels protective/motivating), Examine the Evidence (testable factual claim), Socratic Method (overgeneralizations/logical leaps), Thinking in Shades of Gray (all-or-nothing), Let's Define Terms (identity labels: loser/failure), Externalization of Voices (most powerful — for when the user needs gut-level emotional change, not just intellectual understanding).
+Available: Cost-Benefit Analysis (thought feels protective/motivating), Examine the Evidence (testable factual claim), Socratic Method (overgeneralizations/logical leaps), Thinking in Shades of Gray (all-or-nothing), Let's Define Terms (global labels about self/other/life), Externalization of Voices (most powerful — for when the user needs gut-level emotional change, not just intellectual understanding).
 Self-Forgiveness Check (Hauck — specifically for guilt, shame, or self-blame; or when Self-Rating distortion is present).
+Hauck's 4 Options (for events involving another person's behavior).
+Dispute the Must (Ellis — when Should Statements is present, or the thought contains a rigid demand like "must/should/has to").
 YOUR JOB: Recommend ONE technique in 2 sentences explaining why it fits their specific thought.
 Format: "I'd suggest **[Name]** because [specific reason tied to their exact thought]."`,
 };
@@ -1832,36 +1845,71 @@ Then drag the slider: does the evidence actually prove this thought is 100% true
     });
 
   } else if (tid === 'define') {
-    await botBubble('<strong style="color:var(--accent2)">Let\'s Define Terms</strong> — Paul Hauck<br><br>Your thought contains a global label. The key question isn\'t just what it means — it\'s <em>how specific it actually is</em>.<br><br>"I\'m a failure" is a claim about everything, always. But no one fails at everything. Let\'s pin it down: a failure at <em>what</em>, <em>when</em>, in <em>which situation</em>?');
+    await botBubble('<strong style="color:var(--accent2)">Let\'s Define Terms</strong> — Paul Hauck + Albert Ellis<br><br>Your thought contains a global label. The key question isn\'t just what it means — it\'s <em>how specific it actually is</em>, and <em>who or what</em> it\'s really condemning.<br><br>"I\'m a failure" condemns a whole self. "He\'s a terrible person" condemns a whole other. "Life is unbearable" condemns the whole of life. None of these are ever 100% true — let\'s pin yours down.');
 
     const defW = appendWidget(
       '<div class="widget-label">Let\'s Define Terms</div>'
       + '<div style="font-size:.75rem;color:var(--muted);margin-bottom:.625rem">Thought: <em style="color:var(--danger)">"' + escHtml(session.thought) + '"</em></div>'
+
+      + '<div style="font-size:.72rem;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.07em">Who or what is this label really about?</div>'
+      + '<div id="def-target-cards" style="display:flex;gap:.4rem;margin-bottom:.875rem">'
+      + '<button class="def-target-card" data-target="self" style="flex:1;padding:.5rem .4rem;border-radius:9px;border:1px solid var(--border);background:var(--surface);cursor:pointer;text-align:center">'
+      + '<div style="font-size:.78rem;font-weight:600;color:var(--text)">Myself</div><div style="font-size:.62rem;color:var(--muted);margin-top:.15rem">USA</div></button>'
+      + '<button class="def-target-card" data-target="other" style="flex:1;padding:.5rem .4rem;border-radius:9px;border:1px solid var(--border);background:var(--surface);cursor:pointer;text-align:center">'
+      + '<div style="font-size:.78rem;font-weight:600;color:var(--text)">Another Person</div><div style="font-size:.62rem;color:var(--muted);margin-top:.15rem">UOA</div></button>'
+      + '<button class="def-target-card" data-target="life" style="flex:1;padding:.5rem .4rem;border-radius:9px;border:1px solid var(--border);background:var(--surface);cursor:pointer;text-align:center">'
+      + '<div style="font-size:.78rem;font-weight:600;color:var(--text)">Life / Situation</div><div style="font-size:.62rem;color:var(--muted);margin-top:.15rem">ULA</div></button>'
+      + '</div>'
+
       + '<div style="display:flex;flex-direction:column;gap:.625rem">'
-      + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em">What label am I applying to myself?</div>'
+      + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em" id="def-label-prompt">What label am I applying?</div>'
       + '<input type="text" class="list-row-input" id="def-label" placeholder="e.g. failure, loser, idiot" style="width:100%"></div>'
-      + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em">A [label] at what, exactly? When and in which situation?</div>'
+      + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em" id="def-meaning-prompt">A [label] at what, exactly? When and in which situation?</div>'
       + '<div style="font-size:.72rem;color:var(--muted);margin-bottom:.375rem;line-height:1.5">Make it specific and time-bound — one concrete instance, not &quot;always&quot;.</div>'
       + '<textarea class="chat-textarea" rows="2" id="def-meaning" placeholder="e.g. I failed to meet the deadline on the project at work last Tuesday…"></textarea></div>'
-      + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em">Does this one instance make you a [label] at everything, always?</div>'
+      + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em" id="def-applies-prompt">Does this one instance make the [label] true of everything, always?</div>'
       + '<textarea class="chat-textarea" rows="2" id="def-applies" placeholder="e.g. No — I have also managed X and Y. This was one situation where…"></textarea></div>'
       + '</div>'
       + '<div class="technique-nav" style="margin-top:.75rem"><button class="btn-proceed" id="def-done">Save &amp; Continue →</button></div>'
     );
-    attachTherapist(defW, 'define', () => 'Label:"' + defW.querySelector('#def-label').value + '"/Meaning:"' + defW.querySelector('#def-meaning').value + '"/Applies:"' + defW.querySelector('#def-applies').value + '"');
+
+    let defTarget = 'self';
+    const TARGET_COPY = {
+      self:  { label: 'What label am I applying to myself?', meaning: 'A [label] at what, exactly? When and in which situation?', applies: 'Does this one instance make you a [label] at everything, always?' },
+      other: { label: 'What label am I applying to them?', meaning: 'A [label] at what, exactly? In which specific moment or behavior?', applies: 'Does this one instance make them a [label] as a whole person, always?' },
+      life:  { label: 'What am I calling life or this situation?', meaning: 'Where exactly is life [label] — what specific part, when?', applies: 'Does this one difficult part make all of life [label], always?' },
+    };
+
+    function updateDefTargetUI() {
+      const c = TARGET_COPY[defTarget];
+      defW.querySelector('#def-label-prompt').textContent = c.label;
+      defW.querySelector('#def-meaning-prompt').textContent = c.meaning;
+      defW.querySelector('#def-applies-prompt').textContent = c.applies;
+      defW.querySelectorAll('.def-target-card').forEach(card => {
+        const active = card.dataset.target === defTarget;
+        card.style.borderColor = active ? 'var(--accent)' : 'var(--border)';
+        card.style.background = active ? 'rgba(127,216,190,.08)' : 'var(--surface)';
+      });
+    }
+    defW.querySelectorAll('.def-target-card').forEach(card => {
+      card.addEventListener('click', () => { defTarget = card.dataset.target; updateDefTargetUI(); });
+    });
+    updateDefTargetUI();
+
+    attachTherapist(defW, 'define', () => 'Target: ' + defTarget + '. Label:"' + defW.querySelector('#def-label').value + '"/Meaning:"' + defW.querySelector('#def-meaning').value + '"/Applies:"' + defW.querySelector('#def-applies').value + '"');
+
     defW.querySelector('#def-done').addEventListener('click', () => {
       const lbl = defW.querySelector('#def-label').value.trim();
       const meaning = defW.querySelector('#def-meaning').value.trim();
       const applies = defW.querySelector('#def-applies').value.trim();
       if (!lbl && !meaning && !applies) return;
       session.techniqueResults = session.techniqueResults || {};
-      session.techniqueResults.define = { label: lbl, meaning, applies };
+      session.techniqueResults.define = { target: defTarget, label: lbl, meaning, applies };
       defW.style.opacity = '.5'; defW.style.pointerEvents = 'none';
-      userBubble('Label: "' + lbl + '"\nSpecific instance: ' + meaning + '\nDoes it generalise: ' + applies);
+      const targetNames = { self: 'Myself', other: 'Another Person', life: 'Life/Situation' };
+      userBubble('Target: ' + targetNames[defTarget] + '\nLabel: "' + lbl + '"\nSpecific instance: ' + meaning + '\nDoes it generalise: ' + applies);
       afterTechnique();
     });
-
-
 
   } else if (tid === 'h4o') {
     const H4O_OPTIONS = [
@@ -1946,6 +1994,62 @@ Then drag the slider: does the evidence actually prove this thought is 100% true
       session.techniqueResults.h4o = { option: h4oSelected, optionName: opt.name, reflection };
 
       await botBubble(opt.note);
+      afterTechnique();
+    });
+
+  } else if (tid === 'dtm') {
+    await botBubble(
+      '<strong style="color:#38bdf8">Dispute the Must</strong> — Albert Ellis<br><br>'
+      + 'Underneath most painful thoughts is a hidden <strong>demand</strong> — a belief that something <em>must</em>, <em>should</em>, or <em>has to</em> happen, as if it were a law of the universe.<br><br>'
+      + 'The problem isn\'t wanting things to go well. It\'s the jump from <em>"I want X"</em> to <em>"X absolutely must happen, and it\'s awful if it doesn\'t."</em> That demand is what creates most of the suffering — not the event itself.<br><br>'
+      + 'Let\'s find your Must and dispute it.'
+    );
+
+    const dtmW = appendWidget(
+      '<div class="widget-label" style="color:#38bdf8">Dispute the Must</div>'
+      + '<div style="font-size:.75rem;color:var(--muted);margin-bottom:.875rem">Thought: <em style="color:var(--danger)">"' + escHtml(session.thought) + '"</em></div>'
+
+      + '<div style="font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.3rem;font-weight:600">Step 1 — Name the Must</div>'
+      + '<div style="font-size:.74rem;color:var(--muted);margin-bottom:.4rem;line-height:1.5">What does this thought demand must be true? (e.g. "I must perform perfectly", "They must treat me fairly", "This must go smoothly")</div>'
+      + '<input type="text" class="list-row-input" id="dtm-must" placeholder="e.g. I must not fail at this…" style="width:100%;margin-bottom:.875rem">'
+
+      + '<div style="font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.3rem;font-weight:600">Step 2 — Where\'s the evidence it\'s a law?</div>'
+      + '<div style="font-size:.74rem;color:var(--muted);margin-bottom:.4rem;line-height:1.5">Has this "must" ever NOT been met — to you or anyone else — and the universe kept going anyway?</div>'
+      + '<textarea class="chat-textarea" rows="2" id="dtm-evidence" placeholder="e.g. Plenty of people fail at things and their lives continue. I have survived past failures too…"></textarea>'
+
+      + '<div style="font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;margin:.875rem 0 .3rem;font-weight:600">Step 3 — Rewrite as a preference</div>'
+      + '<div style="font-size:.74rem;color:var(--muted);margin-bottom:.4rem;line-height:1.5">Replace the demand with a strong preference. Format: "I\'d strongly prefer X, but it\'s not a law of the universe that it must happen. If it doesn\'t, that\'s [bad/disappointing] — not catastrophic."</div>'
+      + '<textarea class="chat-textarea" rows="2" id="dtm-preference" placeholder="e.g. I\'d strongly prefer to succeed at this, but it\'s not a law that I must. If I don\'t, that\'s disappointing, not catastrophic…"></textarea>'
+
+      + '<div class="technique-nav" style="margin-top:.875rem"><button class="btn-proceed" id="dtm-done" disabled>Save &amp; Continue →</button></div>'
+    );
+
+    const dtmMust = dtmW.querySelector('#dtm-must');
+    const dtmEvidence = dtmW.querySelector('#dtm-evidence');
+    const dtmPreference = dtmW.querySelector('#dtm-preference');
+    const dtmDone = dtmW.querySelector('#dtm-done');
+
+    function updateDtmState() {
+      dtmDone.disabled = !dtmMust.value.trim() || !dtmPreference.value.trim();
+    }
+    dtmMust.addEventListener('input', updateDtmState);
+    dtmPreference.addEventListener('input', updateDtmState);
+
+    attachTherapist(dtmW, 'dtm', () =>
+      'Must: "' + (dtmMust.value || '') + '". Evidence so far: "' + (dtmEvidence.value || '') + '". Preference rewrite so far: "' + (dtmPreference.value || '') + '"'
+    );
+
+    dtmDone.addEventListener('click', () => {
+      const must = dtmMust.value.trim();
+      const evidence = dtmEvidence.value.trim();
+      const preference = dtmPreference.value.trim();
+      if (!must || !preference) return;
+      dtmW.style.opacity = '.5'; dtmW.style.pointerEvents = 'none';
+
+      session.techniqueResults = session.techniqueResults || {};
+      session.techniqueResults.dtm = { must, evidence, preference };
+
+      userBubble('Must: "' + must + '"\\nEvidence: ' + evidence + '\\nRewritten as preference: "' + preference + '"');
       afterTechnique();
     });
 
@@ -2063,9 +2167,9 @@ Then drag the slider: does the evidence actually prove this thought is 100% true
 async function afterTechnique() {
   if (sessionToken !== (window._lastAfterTechToken = sessionToken)) return;
   session.techniques = session.techniques || [];
-  const all = ['cba', 'ete', 'socratic', 'shades', 'define', 'ev', 'sfc', 'h4o'];
+  const all = ['cba', 'ete', 'socratic', 'shades', 'define', 'ev', 'sfc', 'h4o', 'dtm'];
   const remaining = all.filter(id => !session.techniques.includes(id));
-  const techNames = { cba: 'Cost-Benefit Analysis', ete: 'Examine the Evidence', socratic: 'Socratic Method', shades: 'Thinking in Shades of Gray', define: "Let's Define Terms", ev: 'Externalization of Voices', sfc: 'Self-Forgiveness Check', h4o: "Hauck's 4 Options" };
+  const techNames = { cba: 'Cost-Benefit Analysis', ete: 'Examine the Evidence', socratic: 'Socratic Method', shades: 'Thinking in Shades of Gray', define: "Let's Define Terms", ev: 'Externalization of Voices', sfc: 'Self-Forgiveness Check', h4o: "Hauck's 4 Options", dtm: 'Dispute the Must' };
 
   if (remaining.length === 0) {
     await botBubble(`You've completed both techniques. That's deep work — now let's channel all of this into your Rational Response.`);
@@ -2525,12 +2629,13 @@ function buildSummaryHTML(s, drop, dropColor, dropLabel) {
 
   const techniqueRows = [];
   if (tr.h4o)      techniqueRows.push('<div class="summary-row"><span class="label">4 Options</span><span class="value">' + escHtml((tr.h4o.optionName||tr.h4o.option||'') + ' · ' + (tr.h4o.reflection||'').substring(0,80)) + '</span></div>');
+  if (tr.dtm)      techniqueRows.push('<div class="summary-row"><span class="label">Dispute the Must</span><span class="value">' + escHtml((tr.dtm.must||'') + ' → ' + (tr.dtm.preference||'').substring(0,80)) + '</span></div>');
   if (tr.sfc)      techniqueRows.push('<div class="summary-row"><span class="label">Self-Forgiveness</span><span class="value">' + escHtml((tr.sfc.reasons||[]).map(r=>r.charAt(0).toUpperCase()+r.slice(1)).join(', ') + ' · ' + (tr.sfc.reflection||'').substring(0,80)) + '</span></div>');
   if (tr.cba)      techniqueRows.push('<div class="summary-row"><span class="label">CBA Balance</span><span class="value">' + escHtml(tr.cba.balance||'') + '</span></div>');
   if (tr.ete)      techniqueRows.push('<div class="summary-row"><span class="label">Evidence Against</span><span class="value">' + escHtml(((tr.ete.against||[]).join ? (tr.ete.against||[]).join(', ') : (tr.ete.against||'')).substring(0,120)) + '</span></div>');
   if (tr.socratic) techniqueRows.push('<div class="summary-row"><span class="label">Socratic Q&amp;A</span><span class="value">' + escHtml((tr.socratic||[]).map(q=>q.q).join(' / ').substring(0,120)) + '</span></div>');
   if (tr.shades)   techniqueRows.push('<div class="summary-row"><span class="label">Shades Rating</span><span class="value">' + escHtml(tr.shades.rating+'% · '+tr.shades.nuanced.substring(0,80)) + '</span></div>');
-  if (tr.define)   techniqueRows.push('<div class="summary-row"><span class="label">Label Defined</span><span class="value">' + escHtml('"'+(tr.define.label||'')+'" — '+(tr.define.applies||'').substring(0,80)) + '</span></div>');
+  if (tr.define)   techniqueRows.push('<div class="summary-row"><span class="label">Label Defined (' + escHtml({self:'Self',other:'Other',life:'Life'}[tr.define.target]||'Self') + ')</span><span class="value">' + escHtml('"'+(tr.define.label||'')+'" — '+(tr.define.applies||'').substring(0,80)) + '</span></div>');
 
   const callout = (drop > 0) ? (
     '<div class="belief-reduction-callout">'
@@ -2573,7 +2678,7 @@ function openSessionReview(savedIdx) {
 
   // Build technique detail sections
   let techSections = '';
-  const techLabels = { cba:'Cost-Benefit Analysis', ete:'Examine the Evidence', socratic:'Socratic Method', shades:'Thinking in Shades of Gray', define:"Let's Define Terms", ev:'Externalization of Voices' };
+  const techLabels = { cba:'Cost-Benefit Analysis', ete:'Examine the Evidence', socratic:'Socratic Method', shades:'Thinking in Shades of Gray', define:"Let's Define Terms", ev:'Externalization of Voices', sfc:'Self-Forgiveness Check', h4o:"Hauck's 4 Options", dtm:'Dispute the Must' };
   (s.techniques || []).forEach(tid => {
     const name = techLabels[tid] || tid;
     let detail = '';
@@ -2590,12 +2695,17 @@ function openSessionReview(savedIdx) {
     } else if (tid === 'shades' && tr.shades) {
       detail = '<div style="font-size:.75rem;color:var(--muted);margin-top:.25rem">Real rating: <strong>' + tr.shades.rating + '%</strong><br>' + escHtml(tr.shades.nuanced||'') + '</div>';
     } else if (tid === 'define' && tr.define) {
-      detail = '<div style="font-size:.75rem;color:var(--muted);margin-top:.25rem">Label: <strong>"' + escHtml(tr.define.label||'') + '"</strong><br>Definition: ' + escHtml(tr.define.meaning||'') + '<br>Applies: ' + escHtml(tr.define.applies||'') + '</div>';
+      const tgtNames = { self: 'Myself (USA)', other: 'Another Person (UOA)', life: 'Life/Situation (ULA)' };
+      detail = '<div style="font-size:.75rem;color:var(--muted);margin-top:.25rem"><strong>Target:</strong> ' + escHtml(tgtNames[tr.define.target]||'Myself (USA)') + '<br><strong>Label:</strong> "' + escHtml(tr.define.label||'') + '"<br>Instance: ' + escHtml(tr.define.meaning||'') + '<br>Generalises: ' + escHtml(tr.define.applies||'') + '</div>';
     } else if (tid === 'sfc' && tr.sfc) {
       const rLbls = { deficiency: 'Deficiency', ignorance: 'Ignorance', disturbance: 'Disturbance' };
       detail = '<div style="font-size:.75rem;color:var(--muted);margin-top:.25rem"><strong>Reasons:</strong> ' + escHtml((tr.sfc.reasons||[]).map(r=>rLbls[r]||r).join(', ')) + '<br>' + escHtml(tr.sfc.reflection||'') + '</div>';
     } else if (tid === 'ev' && tr.ev && tr.ev.rounds) {
       detail = '<div style="font-size:.75rem;color:var(--muted);margin-top:.25rem">' + (tr.ev.rounds||[]).map((r,i) => '<div style="margin-bottom:.4rem"><strong>Round ' + (i+1) + ':</strong> <span style="color:var(--danger)">' + escHtml(r.attack||'') + '</span><br>Defense: ' + escHtml(r.defense||'') + '<br><span style="color:#4ade80">' + escHtml(r.score||'') + '</span></div>').join('') + '</div>';
+    } else if (tid === 'h4o' && tr.h4o) {
+      detail = '<div style="font-size:.75rem;color:var(--muted);margin-top:.25rem"><strong>Choice:</strong> ' + escHtml(tr.h4o.optionName||tr.h4o.option||'') + '<br>' + escHtml(tr.h4o.reflection||'') + '</div>';
+    } else if (tid === 'dtm' && tr.dtm) {
+      detail = '<div style="font-size:.75rem;color:var(--muted);margin-top:.25rem"><strong>The Must:</strong> "' + escHtml(tr.dtm.must||'') + '"<br><strong>Evidence it\'s not a law:</strong> ' + escHtml(tr.dtm.evidence||'') + '<br><strong>Rewritten as preference:</strong> ' + escHtml(tr.dtm.preference||'') + '</div>';
     }
     techSections += '<div class="review-technique-item"><div class="review-technique-name">' + escHtml(name) + '</div>' + detail + '</div>';
   });
@@ -2890,16 +3000,23 @@ In the box below, explore: <strong>What are the possible advantages of this thou
       { id: 'ete',      name: 'Examine the Evidence',        desc: 'Gather the actual facts - evidence that supports the thought and evidence that contradicts it.' },
       { id: 'socratic', name: 'Socratic Method',             desc: 'Ask probing questions that expose the hidden assumptions and logical inconsistencies in your thought.' },
       { id: 'shades',   name: 'Thinking in Shades of Gray',  desc: 'Replace black-and-white thinking with a spectrum. Rate the thought and write a more accurate, partial version.' },
-      { id: 'define',   name: "Let's Define Terms",          desc: 'Challenge loaded labels like loser by asking what they literally mean and whether that can ever be 100% true of anyone.' },
+      { id: 'define',   name: "Let's Define Terms",          desc: 'Challenge loaded global labels about yourself, another person, or life itself — and apply Unconditional Self/Other/Life-Acceptance.' },
       { id: 'ev',       name: 'Externalization of Voices',   desc: "Burns' most powerful technique. The negative voice attacks you with your own thoughts; the positive voice defends. Requires 2–3 AI exchanges per thought.", special: 'powerful' },
       { id: 'sfc',      name: 'Self-Forgiveness Check',       desc: "Hauck: three reasons that always justify forgiving yourself — Deficiency, Ignorance, or Disturbance. For guilt and shame-based thoughts.", special: 'hauck' },
       { id: 'h4o',      name: "Hauck's 4 Options",              desc: "For events involving another person. Clarifies your real choices: tolerate without resentment, protest, separate, or tolerate with resentment (the worst option).", special: 'hauck' },
+      { id: 'dtm',      name: 'Dispute the Must',                desc: "Albert Ellis: find the rigid demand behind the thought (\"this MUST happen\") and rewrite it as a strong preference instead — the root fix for Should Statements.", special: 'ellis' },
     ];
     // Mark SFC as recommended if Self-Rating or Labeling distortion was selected
     const selfRatingSelected = (session.distortions || []).some(d => d === 'Self-Rating' || d === 'Labeling');
     if (selfRatingSelected) {
       const sfcEntry = all.find(t => t.id === 'sfc');
       if (sfcEntry) sfcEntry.recommended = true;
+    }
+    // Mark Dispute the Must as recommended if Should Statements distortion was selected
+    const shouldSelected = (session.distortions || []).includes('Should Statements');
+    if (shouldSelected) {
+      const dtmEntry = all.find(t => t.id === 'dtm');
+      if (dtmEntry) dtmEntry.recommended = true;
     }
     const available = all.filter(t => !usedTechniques.includes(t.id));
     const usedLabel = usedTechniques.length > 0
@@ -2920,6 +3037,9 @@ In the box below, explore: <strong>What are the possible advantages of this thou
       } else if (t.special === 'hauck') {
         badge = '<span style="font-size:.6rem;color:#a78bfa;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.3);border-radius:20px;padding:1px 7px;margin-left:.4rem;vertical-align:middle">Hauck</span>';
         cardStyle = 'border-color:rgba(167,139,250,.3);';
+      } else if (t.special === 'ellis') {
+        badge = '<span style="font-size:.6rem;color:#38bdf8;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);border-radius:20px;padding:1px 7px;margin-left:.4rem;vertical-align:middle">Ellis</span>';
+        cardStyle = 'border-color:rgba(56,189,248,.3);';
       }
       if (t.recommended) {
         badge += '<span style="font-size:.6rem;color:#4ade80;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3);border-radius:20px;padding:1px 7px;margin-left:.3rem;vertical-align:middle">★ Recommended</span>';
