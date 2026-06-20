@@ -1843,9 +1843,10 @@ Then drag the slider: does the evidence actually prove this thought is 100% true
       + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em">A [label] at what, exactly? When and in which situation?</div>'
       + '<div style="font-size:.72rem;color:var(--muted);margin-bottom:.375rem;line-height:1.5">Make it specific and time-bound — one concrete instance, not &quot;always&quot;.</div>'
       + '<textarea class="chat-textarea" rows="2" id="def-meaning" placeholder="e.g. I failed to meet the deadline on the project at work last Tuesday…"></textarea></div>'
-      + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em">Does that definition actually apply to you always?</div>'
       + '<div><div style="font-size:.72rem;color:var(--accent);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.07em">Does this one instance make you a [label] at everything, always?</div>'
-      + '<textarea class="chat-textarea" rows="2" id="def-applies" placeholder="e.g. No — I have also managed X and Y. This was one situation where…"></textarea></div></div>'
+      + '<textarea class="chat-textarea" rows="2" id="def-applies" placeholder="e.g. No — I have also managed X and Y. This was one situation where…"></textarea></div>'
+      + '</div>'
+      + '<div class="technique-nav" style="margin-top:.75rem"><button class="btn-proceed" id="def-done">Save &amp; Continue →</button></div>'
     );
     attachTherapist(defW, 'define', () => 'Label:"' + defW.querySelector('#def-label').value + '"/Meaning:"' + defW.querySelector('#def-meaning').value + '"/Applies:"' + defW.querySelector('#def-applies').value + '"');
     defW.querySelector('#def-done').addEventListener('click', () => {
